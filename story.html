@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Ouro Freios</title>
+    <link rel="stylesheet" href="hilux.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+	  
+
+</head>
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+       
+        .menu-lateral {
+            width: 100px;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.3s;
+            overflow-x: hidden;
+        }
+        .menu-lateral.expandido {
+            width: 350px; /* Ajuste conforme necessário */
+        }
+        .menu-lateral .btn-expandir {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .menu-lateral ul {
+            list-style: none;
+            padding: 0;
+        }
+        .menu-lateral ul li {
+            display: flex;
+            align-items: center;
+        }
+        .menu-lateral ul li a {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+			position: absolute;
+			top: 60px;
+			
+        }
+        .menu-lateral ul li a:hover {
+            background-color: var(--cor8);
+        }
+        .menu-lateral ul li .icon {
+            margin-right: 10px;
+        }
+        .menu-lateral ul li .text-link {
+            white-space: nowrap;
+        }
+		 .menu-lateral ul li a button{
+		     background: transparent;
+             backdrop-filter: blur(10px);
+			 border: none;
+			 
+		 }
+    </style>
+</head>
+<body>
+ <div class="box">
+  </div>
+ <div class="NAV">
+<nav>
+    <ul>
+       <li><a href="404.html"><button><script src="https://cdn.lordicon.com/lordicon.js"></script> <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover" style="width:30px;height:30px" alt="menu"></lord-icon></button></a></li>	  
+	  <li><a href="quem somos.html"><button><script src="https://cdn.lordicon.com/lordicon.js"></script> <lord-icon src="https://cdn.lordicon.com/axteoudt.json" trigger="hover" style="width:30px;height:30px"> </lord-icon></button></a></li>
+	   
+    </ul>
+</nav>
+</div>
+    <script>
+        const btnExpandir = document.getElementById('btn-exp');
+        const menuLateral = document.querySelector('.menu-lateral');
+        btnExpandir.addEventListener('click', () => {
+            menuLateral.classList.toggle('expandido');
+        });
+    </script>
+  
+  
+  <div class="container">
+
+<center>
+  <div class="container">
+    <button id="myBtn">
+      <ul>
+        <li>
+          <div class="stories_area">
+            <div class="photo">
+              <img src="3.png" alt="Hilux">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="stories_area">
+            <div class="photo">
+              <img src="3.png" alt="Hilux">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="stories_area">
+            <div class="photo">
+              <img src="3.png" alt="Hilux">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="stories_area">
+            <div class="photo">
+              <img src="3.png" alt="Hilux">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="stories_area">
+            <div class="photo">
+              <img src="3.png" alt="Hilux">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </button>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div data-slide="slide" class="slide">
+        <div class="slide-items">
+          <img src="sapatas.webp" alt="Img 2">
+          <img src="sapata (1).jpeg" alt="Img 1" class="active">
+          <img src="sapata (2).jpeg" alt="Img 2">
+          <img src="sapata (3).jpeg" alt="Img 3">
+          <img src="sapata (4).jpeg" alt="Img 4">
+        </div>
+        <nav class="slide-nav">
+          <button class="slide-prev"><</button>
+          <button class="slide-next">></button>
+        </nav>
+      </div>
+    </div>
+  </div>
+</center>
+
+ 
+
+<div class="apresentação">
+
+<h2>Oferecemos manutenção e reparo de freios e suspensão para veículos nacionais e importados, garantindo segurança e desempenho.
+
+Serviços:
+
+Freios: Manutenção e reparo, incluindo bombas de freio, retífica de discos e substituição de sapatas.
+Suspensão: Inspeção e reparo de todos os componentes para conforto e estabilidade.
+Borracharia: Serviços completos de pneus e alinhamento.</h2>
+
+</div>
+</div>
+
+<script src="loja.js"></script>
+<script src="expandir.js"></script>
+</body>
+</html>

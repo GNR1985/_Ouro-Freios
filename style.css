@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+  background-size: cover;
+  color: #ff0;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  gap: 16px;
+}
+
+.customCheckBoxHolder {
+  margin: 5px;
+  display: flex;
+}
+
+.customCheckBox {
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  padding: 2px 8px;
+  background-color: rgba(0, 0, 0, 0.16);
+  border-radius: 0;
+  color: rgba(255, 255, 255, 0.7);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 300ms;
+  transition-property: color, background-color, box-shadow;
+  display: flex;
+  height: 32px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 1px 0 inset, rgba(255, 255, 255, 0.17) 0 1px 1px 0;
+  outline: none;
+  justify-content: center;
+  min-width: 55px;
+}
+
+.customCheckBox:hover {
+  background-color: #2c2c2c;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.23) 0 -4px 1px 0 inset, rgba(255, 255, 255, 0.17) 0 -1px 1px 0px, rgba(0, 0, 0, 0.17) 0 2px 4px 1px;
+}
+
+.customCheckBox .inner {
+  font-size: 18px;
+  font-weight: 900;
+  pointer-events: none;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 300ms;
+  transition-property: transform;
+  transform: translateY(0px);
+}
+
+.customCheckBox:hover .inner {
+  transform: translateY(-2px);
+}
+
+.customCheckBoxWrapper:first-of-type .customCheckBox {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-right: 0;
+}
+
+.customCheckBoxWrapper:last-of-type .customCheckBox {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 0;
+}
+
+.customCheckBoxInput {
+  display: none;
+}
+
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox {
+  background-color: #2d6737;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.23) 0 -4px 1px 0 inset, rgba(255, 255, 255, 0.17) 0 -1px 1px 0px, rgba(0, 0, 0, 0.17) 0 2px 4px 1px;
+}
+
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox .inner {
+  transform: translateY(-2px);
+}
+
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox:hover {
+  background-color: #34723f;
+  box-shadow: rgba(0, 0, 0, 0.26) 0 -4px 1px 0 inset, rgba(255, 255, 255, 0.17) 0 -1px 1px 0px, rgba(0, 0, 0, 0.15) 0 3px 6px 2px;
+}
+
+.customCheckBoxWrapper .customCheckBox:hover .inner {
+  transform: translateY(-2px);
+}
+
+.img img {
+  height: 20vw; /* Usar unidades relativas para tornar o layout responsivo */
+  width: 20vw;
+  position: absolute;
+  top: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.customCheckBox a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ajustado para responsividade */
+  height: 100vh; /* Ajustado para responsividade */
+  background-image: url(muro.jpeg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  opacity: .1;
+}
+
+.meio {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 7px 7px white, 0 0 3px 2px #fff;
+  border: solid 4px transparent;
+  border-image: linear-gradient(40deg, blue, purple) 1;
+  position: absolute;
+  left: 50%;
+  top: 60vh;
+  transform: translateX(-50%);
+  width: 80vw; /* Ajustado para responsividade */
+  height: auto; /* Removido o valor fixo */
+}
+
+.meio p,
+.meio h1,
+.meio h2 {
+  font-family: 'Sansita', sans-serif;
+  height: auto; /* Removido o valor fixo */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.meio p {
+  color: red;
+}
+
+.meio h1 {
+  color: #B4B39A;
+}
+
+.meio h2 {
+  color: red;
+}
+
+.whatts img {
+  height: 10vw; /* Ajustado para responsividade */
+  width: 10vw; /* Ajustado para responsividade */
+  position: absolute;
+  left: 50%;
+  top: 85vh;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 390px) {
+  body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #000;
+    color: #B4B39A;
+  }
+
+  .img img,
+  .whatts img {
+    height: 40vw; /* Ajustes específicos para telas pequenas */
+    width: 40vw;
+  }
+
+  .meio {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 7px 7px white, 0 0 3px 2px #fff;
+    border: solid 4px transparent;
+    border-image: linear-gradient(40deg, blue, purple) 1;
+    position: absolute;
+    top: 40vh;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60vh;
+    width: 90vw;
+  }
+
+  .meio h1, .meio h2 {
+    font-size: 3vw;
+    width: auto;
+  }
+
+  .meio p {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 10px;
+    width: calc(100% - 20px);
+    left: 0;
+    top: 40vh;
+  }
+
+  .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(muro.jpeg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    opacity: 0.1;
+  }
+
+  .customCheckBoxHolder {
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .whatts img {
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    transform: translateX(-50%);
+  }
+}

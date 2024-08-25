@@ -1,0 +1,591 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #B4B39A; /* Definição de cor padrão para texto */
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(muro.jpeg);
+  overflow: hidden;
+  opacity: 0.1;
+}
+
+:root {
+  --cor0: #4C3F91;
+  --cor1: #9145B6;
+  --cor2: #B95BA5;
+  --cor4: #FF5677;
+  --cor5: #fff;
+  --cor6: #bcbce9;
+  --cor7: #ccc;
+  --cor8: #f1f1f1;
+  --black: #130f0d;
+  --primary: hsl(32, 98%, 56%);
+  --white: #f0f0f9;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.menu-section {
+  display: none;
+}
+
+ul {
+  width: 100%;
+  max-width: 400px;
+  background-color: transparent;
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 20px;
+  overflow-x: auto;
+  position: relative;
+  top: 7px;
+}
+
+ul li {
+  flex-shrink: 0;
+}
+
+img {
+  width: 30px;
+}
+
+.stories_area {
+  width: 60px;
+  height: 60px;
+  padding: 3px;
+  background-image: linear-gradient(45deg, var(--cor4), var(--cor0));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stories_area:hover .photo img {
+  transform: scale(1.1);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  background-color: var(--cor5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 1s;
+  cursor: pointer;
+}
+
+ul::-webkit-scrollbar {
+  display: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-top: 60px;
+  background-image: url(muro.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.modal-content {
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-items img {
+  height: 50%;
+  width: 50%;
+  display: none;
+}
+
+.slide-items img.active {
+  display: block;
+}
+
+.slide-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.apresentação {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 7px 7px white, 0 0 3px 2px #fff;
+  border: solid 4px transparent;
+  border-image: linear-gradient(40deg, blue, purple) 1;
+  height: 300px;
+  width: 80vh;
+  position: absolute;
+  top: 40vh;
+  left: 50vh;
+}
+
+.apresentação h2 {
+  font-family: "Sansita", sans-serif;
+  width: 70vh;
+  display: flex;
+  justify-content: center;
+  color: red;
+  height: 2vh;
+  padding: 0;
+  position: absolute;
+  top: 3vh;
+  left: 6vh;
+}
+
+.slide-nav button {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 21px;
+}
+
+.NAV button {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  border-radius: 30%;
+  border: solid 2px #aaa;
+  background: transparent;
+  backdrop-filter: blur(40px);
+  transition: 1s;
+}
+
+.NAV button:hover {
+  transform: scale(1.1);
+}
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 768px) {
+  .apresentação {
+    width: 90%;
+    left: 50%;
+    top: 30vh;
+    transform: translateX(-50%);
+  }
+
+  .apresentação h2 {
+    font-size: 18px;
+    top: 2vh;
+    left: 3vh;
+  }
+
+  .container {
+    padding: 30px;
+  }
+
+  ul {
+    max-width: 350px;
+    padding: 10px;
+    top: 5px;
+  }
+
+  .stories_area {
+    width: 35px;
+    height: 35px;
+  }
+
+  .photo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .slide-items img {
+    height: 40%;
+    width: 40%;
+  }
+
+  .slide-nav button {
+    height: 25px;
+    width: 25px;
+    font-size: 18px;
+  }
+
+  .NAV button {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  body {
+    height: 100%;
+    background: #000;
+    color: #B4B39A;
+  }
+
+  .apresentação {
+    width: 100%;
+    left: 50%;
+    top: 20vh;
+    height: 50%;
+	width: 60%;
+    padding: 10px;
+  }
+
+  .apresentação h2 {
+    font-size: 12px;
+    top: 3vh;
+    left: 10px;
+    width: 90%;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  ul {
+    max-width: 100%;
+    padding: 5px;
+    top: 2px;
+  }
+
+  .stories_area {
+    width: 30px;
+    height: 30px;
+  }
+
+  .photo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .slide-items img {
+    height: 35%;
+    width: 35%;
+  }
+
+  .slide-nav button {
+    height: 20px;
+    width: 20px;
+    font-size: 16px;
+  }
+
+  .NAV button {
+    height: 30px;
+    width: 30px;
+  }
+}
+@media screen and (max-width: 706px) {
+  body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto;
+    background: #000;
+    color: #B4B39A;
+  }
+
+  .img img,
+  .whatts img {
+    height: 35vw; /* Scalable units for responsiveness */
+    width: 35vw;
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+
+  .meio {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 7px 7px white, 0 0 3px 2px #fff;
+    border: solid 4px transparent;
+    border-image: linear-gradient(40deg, blue, purple) 1;
+    height: 50vh;
+    width: 80vw;
+    position: absolute;
+    top: 40vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+  }
+
+  .meio h1, .meio h2 {
+    font-size: 1.4rem;
+    width: auto;
+  }
+
+  .meio h2 {
+    color: red;
+  }
+
+  .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(muro.jpeg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    opacity: 0.1;
+  }
+
+  .customCheckBoxHolder {
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .customCheckBox .inner {
+    font-size: 14px;
+  }
+
+  .meio p {
+    box-sizing: border-box;
+    overflow: hidden;
+    left: 10px;
+    top: 40vh;
+    padding: 10px;
+    width: calc(100% - 20px); /* Adjust spacing */
+  }
+
+  .whatts img {
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    transform: translateX(-50%);
+  }
+}
+@media screen and (max-width: 1080px) and (min-aspect-ratio: 20/9) {
+  body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #000;
+    color: #B4B39A;
+  }
+
+  .img img,
+  .whatts img {
+    height: 30vw; /* Adjust to fit the high resolution and screen size */
+    width: 30vw;
+    top: 10vh; /* Position images appropriately on the taller screen */
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+
+  .apresentação {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 7px 7px white, 0 0 3px 2px #fff;
+    border: solid 4px transparent;
+    border-image: linear-gradient(40deg, blue, purple) 1;
+    height: 40vh; /* Adjusted for taller aspect ratio */
+    width: 70vw;  /* Fit better on narrower screens */
+    position: absolute;
+    top: 50vh; /* Positioned in the middle part of the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+  }
+
+  .apresentação h1, .apresentação h2 {
+    font-size: 1.2rem; /* Slightly smaller text for readability */
+    width: auto;
+  }
+
+  .apresentação h2 {
+    color: red;
+  }
+
+  .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(muro.jpeg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    opacity: 0.1;
+  }
+
+  .customCheckBoxHolder {
+    position: absolute;
+    top: 60vh; /* Adjust to fit below the main content */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .customCheckBox .inner {
+    font-size: 14px;
+  }
+
+  .apresentação p {
+    box-sizing: border-box;
+    overflow: hidden;
+    left: 10px;
+    top: 65vh;
+    padding: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .whatts img {
+    position: absolute;
+    left: 50%;
+    top: 5vh;
+    transform: translateX(-50%);
+  }
+}
+@media screen and (max-width: 1024px){
+	body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #000;
+    color: #B4B39A;
+  }
+
+  .img img,
+  .whatts img {
+    height: 30vw; /* Adjust to fit the high resolution and screen size */
+    width: 30vw;
+    top: 10vh; /* Position images appropriately on the taller screen */
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+
+  .apresentação {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 7px 7px white, 0 0 3px 2px #fff;
+    border: solid 4px transparent;
+    border-image: linear-gradient(40deg, blue, purple) 1;
+    height: 70vh; /* Adjusted for taller aspect ratio */
+    width: 70vw;  /* Fit better on narrower screens */
+    position: absolute;
+    top: 30vh; /* Positioned in the middle part of the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+  }
+
+  .apresentação h1, .apresentação h2 {
+    font-size: 1.2rem; /* Slightly smaller text for readability */
+    width: auto;
+  }
+
+  .meio h2 {
+    color: red;
+  }
+
+  .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(muro.jpeg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    opacity: 0.1;
+  }
+
+  .customCheckBoxHolder {
+    position: absolute;
+    top: 60vh; /* Adjust to fit below the main content */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .customCheckBox .inner {
+    font-size: 14px;
+  }
+
+  .meio p {
+    box-sizing: border-box;
+    overflow: hidden;
+    left: 10px;
+    top: 65vh;
+    padding: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .whatts img {
+    position: absolute;
+    left: 50%;
+    top: 5vh;
+    transform: translateX(-50%);
+  }
+}
+}
